@@ -18,6 +18,7 @@ from homeassistant.helpers import config_validation as cv, entity_platform
 
 from .const import (
     CONF_ICON,
+    CONF_MEASUREMENT,
     CONF_NAME,
     CONF_STATE_CLASS,
     CONF_UNIT_OF_MEASUREMENT,
@@ -43,13 +44,12 @@ async def async_setup_entry(
     _: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Initialise sensors and add to Home Assistant."""
-
     name = entry.data[CONF_NAME]
     icon = entry.data[CONF_ICON]
     unit_of_measurement = entry.data.get(CONF_UNIT_OF_MEASUREMENT, None)
     state_class = (
         SensorStateClass.MEASUREMENT
-        if entry.data[CONF_STATE_CLASS] == SensorStateClass.MEASUREMENT.name
+        if entry.data[CONF_STATE_CLASS] == CONF_MEASUREMENT
         else SensorStateClass.TOTAL
     )
 

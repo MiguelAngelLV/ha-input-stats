@@ -17,8 +17,8 @@
   "selector": {
     "state_class": {
       "options": {
-        "TOTAL": "Total",
-        "MEASUREMENT": "Medición"
+        "total": "Total",
+        "measurement": "Medición"
       }
     }
   },
