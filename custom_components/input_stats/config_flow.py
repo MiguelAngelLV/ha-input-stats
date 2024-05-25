@@ -6,6 +6,7 @@ import logging
 from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
+
 from homeassistant import config_entries
 from homeassistant.components.sensor import (
     DEVICE_CLASS_UNITS,

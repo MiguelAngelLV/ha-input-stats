@@ -5,7 +5,9 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING
 
+from typing_extensions import override
 import voluptuous as vol
+
 from homeassistant.components.sensor import (
     RestoreEntity,
     SensorEntity,
@@ -13,7 +15,6 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.helpers import config_validation as cv, entity_platform
-from typing_extensions import override
 
 from .const import (
     CONF_ICON,
