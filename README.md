@@ -4,6 +4,11 @@ Input Stats is a Home Assistant component that allows you to create your own sen
 
 Thanks to the various Home Assistant options, we can later consult the evolution of our data by comparing it over different periods.
 
+
+## Installation
+
+You can install the component using HACS or download manually in you Home Assistant configuration directory.
+
 ## Configuration
 
 To add a new configuration, go to `Settings -> Devices & Services -> Add Integration -> Input Stats`.
