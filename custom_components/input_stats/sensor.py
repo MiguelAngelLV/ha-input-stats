@@ -24,7 +24,7 @@ from .const import (
     DOMAIN,
     SERVICE_DECREMENT,
     SERVICE_INCREMENT,
-    SERVICE_SET_VALUE,
+    SERVICE_SET_VALUE, CONF_MEASUREMENT,
 )
 
 if TYPE_CHECKING:
@@ -43,13 +43,12 @@ async def async_setup_entry(
     _: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Initialise sensors and add to Home Assistant."""
-
     name = entry.data[CONF_NAME]
     icon = entry.data[CONF_ICON]
     unit_of_measurement = entry.data.get(CONF_UNIT_OF_MEASUREMENT, None)
     state_class = (
         SensorStateClass.MEASUREMENT
-        if entry.data[CONF_STATE_CLASS] == SensorStateClass.MEASUREMENT.name
+        if entry.data[CONF_STATE_CLASS] == CONF_MEASUREMENT
         else SensorStateClass.TOTAL
     )
 

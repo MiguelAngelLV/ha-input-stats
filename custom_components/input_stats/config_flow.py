@@ -23,8 +23,10 @@ from homeassistant.helpers.selector import (
 
 from .const import (
     CONF_ICON,
+    CONF_MEASUREMENT,
     CONF_NAME,
     CONF_STATE_CLASS,
+    CONF_TOTAL,
     CONF_UNIT_OF_MEASUREMENT,
     DOMAIN,
 )
@@ -55,8 +57,8 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         translation_key="state_class",
                         multiple=False,
                         options=[
-                            SelectOptionDict(label="TOTAL", value="TOTAL"),
-                            SelectOptionDict(label="MEASUREMENT", value="MEASUREMENT"),
+                            SelectOptionDict(label=CONF_TOTAL, value=CONF_TOTAL),
+                            SelectOptionDict(label=CONF_MEASUREMENT, value=CONF_MEASUREMENT),
                         ],
                         mode=SelectSelectorMode.DROPDOWN,
                     )
