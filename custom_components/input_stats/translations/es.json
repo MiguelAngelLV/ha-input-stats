@@ -1,0 +1,57 @@
+{
+  "config": {
+    "error": {
+      "unknown": "Error inesperado"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "name": "Nombre",
+          "icon": "Icono",
+          "state_class": "Tipo",
+          "unit_of_measurement": "Unidad de medida."
+        }
+      }
+    }
+  },
+  "selector": {
+    "state_class": {
+      "options": {
+        "TOTAL": "Total",
+        "MEASUREMENT": "Medición"
+      }
+    }
+  },
+  "services": {
+    "decrement": {
+      "description": "Decrementa un sensor.",
+      "name": "Decrementar",
+      "fields": {
+        "amount": {
+          "description": "La cantidad a descrementar el sensor.",
+          "name": "Cantidad"
+        }
+      }
+    },
+    "increment": {
+      "description": "Incrementa un sensor.",
+      "name": "Incrementar",
+      "fields": {
+        "amount": {
+          "description": "La cantidad a incrementar el sensor.",
+          "name": "Cantidad"
+        }
+      }
+    },
+    "set_value": {
+      "description": "Establece el valor del sensor.",
+      "fields": {
+        "value": {
+          "description": "El nuevo valor del sensor al que debe ajustarse la entidad.",
+          "name": "Valor"
+        }
+      },
+      "name": "Establecer"
+    }
+  }
+}

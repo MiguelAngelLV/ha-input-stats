@@ -1,0 +1,44 @@
+increment:
+  description: "Increment the value by a specified amount."
+  target:
+    entity:
+      integration: input_stats
+  fields:
+    amount:
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 9223372036854775807
+          step: 0.001
+          mode: box
+
+decrement:
+  description: "Decrement the value by a specified amount."
+  target:
+    entity:
+      integration: input_stats
+  fields:
+    amount:
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 9223372036854775807
+          step: 0.001
+          mode: box
+
+set_value:
+  description: "Set the value to a specified amount."
+  target:
+    entity:
+      integration: input_stats
+  fields:
+    value:
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 9223372036854775807
+          step: 0.001
+          mode: box

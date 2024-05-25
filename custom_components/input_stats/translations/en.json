@@ -1,0 +1,57 @@
+{
+  "config": {
+    "error": {
+      "unknown": "Unexpected error"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "name": "Name",
+          "icon": "Icon",
+          "state_class": "Type",
+          "unit_of_measurement": "Unit of measurement"
+        }
+      }
+    }
+  },
+  "selector": {
+    "state_class": {
+      "options": {
+        "TOTAL": "Total",
+        "MEASUREMENT": "Measurement"
+      }
+    }
+  },
+  "services": {
+    "decrement": {
+      "description": "Decreases a sensor.",
+      "name": "Decrement",
+      "fields": {
+        "amount": {
+          "description": "The amount to decrement the sensor.",
+          "name": "Amount"
+        }
+      }
+    },
+    "increment": {
+      "description": "Increases a sensor.",
+      "name": "Increment",
+      "fields": {
+        "amount": {
+          "description": "The amount to increment the sensor.",
+          "name": "Amount"
+        }
+      }
+    },
+    "set_value": {
+      "description": "Sets the sensor value.",
+      "fields": {
+        "value": {
+          "description": "The new value of the sensor to which the entity should be set.",
+          "name": "Value"
+        }
+      },
+      "name": "Set Value"
+    }
+  }
+}
