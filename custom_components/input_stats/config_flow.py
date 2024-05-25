@@ -6,7 +6,6 @@ import logging
 from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
-
 from homeassistant import config_entries
 from homeassistant.components.sensor import (
     DEVICE_CLASS_UNITS,
@@ -58,7 +57,9 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         multiple=False,
                         options=[
                             SelectOptionDict(label=CONF_TOTAL, value=CONF_TOTAL),
-                            SelectOptionDict(label=CONF_MEASUREMENT, value=CONF_MEASUREMENT),
+                            SelectOptionDict(
+                                label=CONF_MEASUREMENT, value=CONF_MEASUREMENT
+                            ),
                         ],
                         mode=SelectSelectorMode.DROPDOWN,
                     )
