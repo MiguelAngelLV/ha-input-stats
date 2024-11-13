@@ -17,6 +17,7 @@ from homeassistant.components.sensor import (
 from homeassistant.helpers import config_validation as cv, entity_platform
 
 from .const import (
+    CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_MEASUREMENT,
     CONF_NAME,
@@ -47,6 +48,7 @@ async def async_setup_entry(
     name = entry.data[CONF_NAME]
     icon = entry.data[CONF_ICON]
     unit_of_measurement = entry.data.get(CONF_UNIT_OF_MEASUREMENT, None)
+    device_class = entry.data.get(CONF_DEVICE_CLASS, None)
     state_class = (
         SensorStateClass.MEASUREMENT
         if entry.data[CONF_STATE_CLASS] == CONF_MEASUREMENT
@@ -59,6 +61,7 @@ async def async_setup_entry(
         icon=icon,
         has_entity_name=True,
         state_class=state_class,
+        device_class=device_class,
         native_unit_of_measurement=unit_of_measurement,
     )
     input_stats = InputStats(description=description, unique_id=entry.entry_id)
