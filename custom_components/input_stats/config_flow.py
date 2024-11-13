@@ -10,6 +10,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.components.sensor import (
     DEVICE_CLASS_UNITS,
+    SensorDeviceClass,
 )
 from homeassistant.helpers.selector import (
     IconSelector,
@@ -22,6 +23,7 @@ from homeassistant.helpers.selector import (
 )
 
 from .const import (
+    CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_MEASUREMENT,
     CONF_NAME,
@@ -64,6 +66,19 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         ],
                         mode=SelectSelectorMode.DROPDOWN,
                     )
+                ),
+                vol.Optional(CONF_DEVICE_CLASS): SelectSelector(
+                    SelectSelectorConfig(
+                        options=[
+                            device_class
+                            for device_class in SensorDeviceClass
+                            if device_class != SensorDeviceClass.ENUM
+                        ],
+                        mode=SelectSelectorMode.DROPDOWN,
+                        translation_key="device_class",
+                        multiple=False,
+                        sort=True,
+                    ),
                 ),
                 vol.Optional(CONF_UNIT_OF_MEASUREMENT): SelectSelector(
                     SelectSelectorConfig(
